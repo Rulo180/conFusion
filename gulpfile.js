@@ -33,7 +33,7 @@ gulp.task('default', ['clean'], function() {
 });
 
 gulp.task('usemin',['jshint'], function () {
-  return gulp.src('./app/menu.html')
+  return gulp.src('./app/*.html')
     .pipe(usemin({
       css:[minifycss(),rev()],
       js: [ngannotate(),uglify(),rev()]
@@ -66,14 +66,13 @@ gulp.task('watch', ['browser-sync'], function() {
 
 });
 
-gulp.task('browser-sync', ['default'], function () {
-   var files = [
-      'app/**/*.html',
-      'app/styles/**/*.css',
-      'app/images/**/*.png',
-      'app/scripts/**/*.js',
-      'dist/**/*'
-   ];
+browserSync.init(files, {
+  server: {
+    baseDir: 'dist',
+    index: 'index.html'
+  },
+  reloadDelay: 1000
+});
 
    browserSync.init(files, {
       server: {
