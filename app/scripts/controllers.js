@@ -46,7 +46,7 @@ angular.module('confusionApp')
             $scope.invalidChannelSelection = false;
     }])
 
-    .controller('FeedbackController', ['$scope', function($scope) {
+        .controller('FeedbackController', ['$scope', function($scope) {
 		
 			$scope.sendFeedback = function() {
 				console.log($scope.feedback);
@@ -67,10 +67,11 @@ angular.module('confusionApp')
 			};
     }])
 		
-	.controller('dishDetailController', ['$scope', 'menuFactory', function($scope, menuFactory) {
+	.controller('dishDetailController', ['$scope', '$routeParams', 'menuFactory', 
+        function($scope, $routeParams, menuFactory) {
 			
-            
-            $scope.dish = menuFactory.getDish(1);
+            var dish= menuFactory.getDish(parseInt($routeParams.id,10));                        
+            $scope.dish = dish;
             
     }])
 	
