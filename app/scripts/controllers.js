@@ -67,13 +67,12 @@ angular.module('confusionApp')
 			};
     }])
 		
-	.controller('dishDetailController', ['$scope', '$routeParams', 'menuFactory', 
-        function($scope, $routeParams, menuFactory) {
-			
-            var dish= menuFactory.getDish(parseInt($routeParams.id,10));                        
+	.controller('DishDetailController', ['$scope', '$routeParams', 'menuFactory', function($scope, $routeParams, menuFactory) {
+
+            var dish= menuFactory.getDish(parseInt($routeParams.id,10));
             $scope.dish = dish;
             
-    }])
+        }])
 	
 	.controller('DishCommentController', ['$scope', function($scope) {
 		
@@ -97,7 +96,7 @@ angular.module('confusionApp')
 			$scope.comment = {author:"", rating:"", date:"", comment:"" };
 			
 			
-		}
+		};
 	}])	
 		
 ;

@@ -44,7 +44,7 @@ angular.module('confusionApp')
                                                  comment:"It's your birthday, we're gonna party!",
                                                  author:"25 Cent",
                                                  date:"2011-12-02T17:57:28.556094Z"
-                                         }                                                          ]
+                                         }]
                             },
                             {
                                 _id:1,
@@ -84,7 +84,7 @@ angular.module('confusionApp')
                                                  comment:"It's your birthday, we're gonna party!",
                                                  author:"25 Cent",
                                                  date:"2011-12-02T17:57:28.556094Z"
-                                         }                                                          ]
+                                         }]
                             },
                             {
                                 _id:2,
@@ -124,8 +124,7 @@ angular.module('confusionApp')
                                                  comment:"It's your birthday, we're gonna party!",
                                                  author:"25 Cent",
                                                  date:"2011-12-02T17:57:28.556094Z"
-                                         }
-                                                                                                ]
+                                         }]
                             },
                             {
                                 _id:3,
