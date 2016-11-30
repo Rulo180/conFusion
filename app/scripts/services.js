@@ -209,33 +209,33 @@ angular.module('confusionApp')
 
         .factory('corporateFactory', function() {
     
-            var corpfac = {};
-    
+            var corpfac = {};       //Al ser una factory se espera que devuelva un objeto con todas las funciones
+                                    //Por lo tanto necesito crear un objeto vacio al cual anexarle las funciones
             var leadership = [
                 {
-                    name: "Peter Pan",
-                    image: 'images/alberto.png',
+                    name: "Maxi Checere",
+                    image: 'images/maxi.jpg',
                     designation: "Chief Epicurious Officer",
                     abbr: "CEO",
                     description: "Our CEO, Peter, credits his hardworking East Asian immigrant parents who undertook the arduous journey to the shores of America with the intention of giving their children the best future. His mother's wizardy in the kitchen whipping up the tastiest dishes with whatever is available inexpensively at the supermarket, was his first inspiration to create the fusion cuisines for which The Frying Pan became well known. He brings his zeal for fusion cuisines to this restaurant, pioneering cross-cultural culinary connections."
                 },
                 {
-                    name: "Dhanasekaran Witherspoon",
-                    image: 'images/alberto.png',
+                    name: "Flor Lucero",
+                    image: 'images/flor.jpg',
                     designation: "Chief Food Officer",
                     abbr: "CFO",
                     description: "Our CFO, Danny, as he is affectionately referred to by his colleagues, comes from a long established family tradition in farming and produce. His experiences growing up on a farm in the Australian outback gave him great appreciation for varieties of food sources. As he puts it in his own words, Everything that runs, wins, and everything that stays, pays!"
                 },
                 {
-                    name: "Agumbe Tang",
-                          image: 'images/alberto.png',
+                    name: "David Brichs",
+                    image: 'images/david.jpg',
                     designation: "Chief Taste Officer",
                     abbr: "CTO",
                     description: "Blessed with the most discerning gustatory sense, Agumbe, our CFO, personally ensures that every dish that we serve meets his exacting tastes. Our chefs dread the tongue lashing that ensues if their dish does not meet his exacting standards. He lives by his motto, You click only if you survive my lick."
                 },
                 {
-                    name: "Alberto Somayya",
-                    image: 'images/alberto.png',
+                    name: "Martin Valles",
+                    image: 'images/yo.png',
                     designation: "Executive Chef",
                     abbr: "EC",
                     description: "Award winning three-star Michelin chef with wide International experience having worked closely with whos-who in the culinary world, he specializes in creating mouthwatering Indo-Italian fusion experiences. He says, Put together the cuisines from the two craziest cultures, and you get a winning hit! Amma Mia!"
@@ -246,15 +246,17 @@ angular.module('confusionApp')
             // Implement two functions, one named getLeaders,
             // the other named getLeader(index)
             // Remember this is a factory not a service
-            this.getLeaders = function() {
+            corpfac.getLeaders = function() {           //le vamos metiendo las funciones adentro
                 
                 return leadership;
             };
             
-            this.getLeader = function(index) {
+            corpfac.getLeader = function(index) {
                 
                 return leadership[index];
             };
+            
+            return corpfac;                 //Al final es necesario devolver el objeto con las funciones.
     
         })
 
