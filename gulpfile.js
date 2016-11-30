@@ -16,7 +16,7 @@ var gulp = require('gulp'),
 	
 var ngannotate = require('gulp-ng-annotate');
 	
-	gulp.task('jshint', function() {
+gulp.task('jshint', function() {
   return gulp.src('app/scripts/**/*.js')
   .pipe(jshint())
   .pipe(jshint.reporter(stylish));
@@ -82,4 +82,3 @@ browserSync.init(files, {
    });
         // Watch any files in dist/, reload on change
   gulp.watch(['dist/**']).on('change', browserSync.reload);
-    });
